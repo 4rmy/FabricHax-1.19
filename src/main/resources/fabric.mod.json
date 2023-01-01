@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "fabrichax",
+  "version": "${version}",
+
+  "name": "FabricHax",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "4rmy"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": ""
+  },
+
+  "license": "MIT License",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.army.fabrichax.FabricHax"
+    ]
+  },
+  "mixins": [
+    "fabrichax.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.11",
+    "fabric-api": "*",
+    "minecraft": "~1.19.3",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

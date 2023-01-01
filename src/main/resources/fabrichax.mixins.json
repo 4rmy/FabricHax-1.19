@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.army.fabrichax.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "InGameHudMixin",
+    "KeyboardMixin",
+    "MinecraftClientMixin",
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
