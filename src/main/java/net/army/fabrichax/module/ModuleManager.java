@@ -1,5 +1,6 @@
 package net.army.fabrichax.module;
 
+import net.army.fabrichax.module.modules.combat.KillAura;
 import net.army.fabrichax.module.modules.movement.Fly;
 import net.army.fabrichax.module.modules.player.NoFall;
 import net.army.fabrichax.module.modules.render.XRay;
@@ -15,6 +16,7 @@ public class ModuleManager {
         this.modules.add(new Fly());
         this.modules.add(new XRay());
         this.modules.add(new NoFall());
+        this.modules.add(new KillAura());
     }
 
     public ArrayList<Module> getModules() {
@@ -31,17 +33,13 @@ public class ModuleManager {
     }
 
     public ArrayList<Module> getModulesByCategory(Category c) {
-        ArrayList<Module> mods = new ArrayList<Module>();
+        ArrayList<Module> mods = new ArrayList<>();
         for (Module m : this.modules) {
             if (m.getCategory() == c) {
                 mods.add(m);
             }
         }
         return mods;
-    }
-
-    public void addModule(Module module) {
-        this.modules.add(module);
     }
 
     public ArrayList<Module> getActiveModules() {
