@@ -3,6 +3,7 @@ package net.army.fabrichax.module;
 import net.army.fabrichax.module.modules.combat.KillAura;
 import net.army.fabrichax.module.modules.movement.Fly;
 import net.army.fabrichax.module.modules.player.NoFall;
+import net.army.fabrichax.module.modules.render.Fulbright;
 import net.army.fabrichax.module.modules.render.XRay;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class ModuleManager {
         this.modules.add(new XRay());
         this.modules.add(new NoFall());
         this.modules.add(new KillAura());
+        this.modules.add(new Fulbright());
     }
 
     public ArrayList<Module> getModules() {

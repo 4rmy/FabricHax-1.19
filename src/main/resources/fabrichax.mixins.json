@@ -9,6 +9,7 @@
     "InGameHudMixin",
     "KeyboardMixin",
     "MinecraftClientMixin",
+    "RenderBlockSideMixin"
   ],
   "injectors": {
     "defaultRequire": 1

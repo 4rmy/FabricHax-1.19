@@ -3,6 +3,7 @@ package net.army.fabrichax.ui;
 import net.army.fabrichax.module.Module;
 import net.army.fabrichax.module.ModuleManager;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
 
 import java.awt.*;
@@ -20,7 +21,7 @@ public class Hud {
     private static final MinecraftClient mc = MinecraftClient.getInstance();
     public static void render(MatrixStack matrices, float tickDelta) {
 
-        float Y = 2;
+        int Y = 2;
 
         ArrayList<Module> mods = ModuleManager.instance.getActiveModules();
         mods.sort(new ModuleComparator());
@@ -37,7 +38,7 @@ public class Hud {
                     Y,
                     color
             );
-            Y += mc.textRenderer.fontHeight;
+            Y += mc.textRenderer.fontHeight+2;
         }
     }
 }

@@ -10,4 +10,14 @@ public class XRay extends Module{
         super("X-Ray", "Allows the player to see through blocks", Category.RENDER);
         this.setKey(GLFW_KEY_X);
     }
+
+    @Override
+    public void onEnable() {
+        mc.worldRenderer.reload();
+    }
+
+    @Override
+    public void onDisable() {
+        mc.worldRenderer.reload();
+    }
 }
