@@ -7,6 +7,7 @@ import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_ESCAPE;
 import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
 
 public class FabricHax implements ModInitializer {
@@ -26,6 +27,9 @@ public class FabricHax implements ModInitializer {
 				if (m.getKey() == key) {
 					m.toggle();
 				}
+			}
+			if (key == GLFW_KEY_ESCAPE) {
+				ModuleManager.instance.getModuleByName("ClickGUI").setToggled(false);
 			}
 		}
 	}

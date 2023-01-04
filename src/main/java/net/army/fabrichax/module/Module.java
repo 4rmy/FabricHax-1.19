@@ -2,6 +2,8 @@ package net.army.fabrichax.module;
 
 import net.minecraft.client.MinecraftClient;
 
+import java.util.ArrayList;
+
 public class Module {
     private final String name;
     private final String description;

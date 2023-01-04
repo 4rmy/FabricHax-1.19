@@ -3,7 +3,6 @@ package net.army.fabrichax.ui;
 import net.army.fabrichax.module.Module;
 import net.army.fabrichax.module.ModuleManager;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
 
 import java.awt.*;

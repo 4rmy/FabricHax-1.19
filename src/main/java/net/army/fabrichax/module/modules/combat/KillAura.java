@@ -3,11 +3,9 @@ package net.army.fabrichax.module.modules.combat;
 import net.army.fabrichax.module.Category;
 import net.army.fabrichax.module.Module;
 import net.army.fabrichax.util.Timer;
-import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.SwordItem;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.util.math.Vec3d;
 
@@ -48,8 +46,7 @@ public class KillAura extends Module {
         });
         PlayerEntity player = (PlayerEntity) mc.world.getEntityById(mc.player.getId());
         assert player != null;
-
-        if (timer.hasTimeElapsed(1000/20, true)) {
+        if (timer.hasTimeElapsed(1000/10, true)) {
             if (closest[0] != null && closest[0].isAlive() && closest[0].isAttackable())
                 mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.attack(closest[0], mc.player.isSneaking()));
         }
