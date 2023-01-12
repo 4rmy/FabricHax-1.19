@@ -11,7 +11,7 @@ import static org.lwjgl.glfw.GLFW.GLFW_KEY_ESCAPE;
 import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
 
 public class FabricHax implements ModInitializer {
-	public static final String MOD_ID = "FabricHax", VERSION = "0.0.1 [BETA]";
+	public static final String MOD_ID = "FabricHax", VERSION = "0.0.1";
 	public static final FabricHax instance = new FabricHax();
 	public static final Logger logger = LoggerFactory.getLogger(MOD_ID);
 	public MinecraftClient mc = MinecraftClient.getInstance();
@@ -42,5 +42,9 @@ public class FabricHax implements ModInitializer {
 		}
 		if (mc.getWindow() != null)
 			mc.getWindow().setTitle(MOD_ID + " v" + VERSION);
+	}
+
+	public boolean onCommand() {
+		return true;
 	}
 }

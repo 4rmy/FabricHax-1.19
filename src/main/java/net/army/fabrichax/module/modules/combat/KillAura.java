@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.util.math.Vec3d;
 
+import static net.minecraft.entity.attribute.EntityAttributes.GENERIC_ATTACK_SPEED;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_B;
 
 public class KillAura extends Module {
@@ -30,10 +31,12 @@ public class KillAura extends Module {
                 return;
             if (entity.getType() == EntityType.ITEM)
                 return;
+            if (!entity.isAlive())
+                return;
             Vec3d pos = entity.getPos();
             Vec3d playerPos = mc.player.getPos();
             double distance = pos.distanceTo(playerPos);
-            if (closest[0] != null){
+            if (closest[0] != null) {
                 double cdis = closest[0].getPos().distanceTo(playerPos);
                 if (distance < 4) {
                     if (distance < cdis) {
@@ -46,7 +49,7 @@ public class KillAura extends Module {
         });
         PlayerEntity player = (PlayerEntity) mc.world.getEntityById(mc.player.getId());
         assert player != null;
-        if (timer.hasTimeElapsed(1000/10, true)) {
+        if (timer.hasTimeElapsed((long) (1000L/mc.player.getAttributeValue(GENERIC_ATTACK_SPEED)), true)) {
             if (closest[0] != null && closest[0].isAlive() && closest[0].isAttackable())
                 mc.player.networkHandler.sendPacket(PlayerInteractEntityC2SPacket.attack(closest[0], mc.player.isSneaking()));
         }

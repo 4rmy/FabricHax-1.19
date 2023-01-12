@@ -3,13 +3,13 @@ package net.army.fabrichax.module.modules.movement;
 import net.army.fabrichax.module.Category;
 import net.army.fabrichax.module.Module;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_F;
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_G;
 
 public class Fly extends Module{
 
     public Fly() {
         super("Fly", "Allows the player to fly", Category.MOVEMENT);
-        this.setKey(GLFW_KEY_F);
+        this.setKey(GLFW_KEY_G);
     }
 
     @Override

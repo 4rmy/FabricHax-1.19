@@ -7,13 +7,11 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 
 import java.util.Objects;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_O;
-
 public class Fulbright extends Module{
     private Double gamma;
     public Fulbright() {
         super("Fulbright", "Allows the player to see in the dark", Category.RENDER);
-        this.setKey(GLFW_KEY_O);
+        this.setKey(-1);
     }
 
     @Override

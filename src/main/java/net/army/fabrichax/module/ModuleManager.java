@@ -2,6 +2,7 @@ package net.army.fabrichax.module;
 
 import net.army.fabrichax.module.modules.combat.KillAura;
 import net.army.fabrichax.module.modules.misc.ClickGUI;
+import net.army.fabrichax.module.modules.misc.PlayerSaveBlock;
 import net.army.fabrichax.module.modules.movement.Fly;
 import net.army.fabrichax.module.modules.player.NoFall;
 import net.army.fabrichax.module.modules.render.Fulbright;
@@ -21,6 +22,7 @@ public class ModuleManager {
         this.modules.add(new KillAura());
         this.modules.add(new Fulbright());
         this.modules.add(new ClickGUI());
+        this.modules.add(new PlayerSaveBlock());
     }
 
     public ArrayList<Module> getModules() {
